@@ -38,9 +38,12 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
+      color: "#fff",
     },
   },
-
+  link: {
+    textDecoration:'none',
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -50,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     marginLeft: 0,
-    width: "100%",
+    width: "70%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
       width: "auto",
@@ -75,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "12ch",
+      width: "11ch",
       "&:focus": {
         width: "20ch",
       },
@@ -201,7 +204,7 @@ export default function Header() {
         <Toolbar>
           <DrawerC />
 
-          <NavLink to="/">
+          <NavLink to="/" className={classes.link}>
             <Typography className={classes.title} variant="h6" noWrap>
               Ani-Menie
             </Typography>

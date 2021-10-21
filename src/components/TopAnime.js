@@ -19,12 +19,13 @@ function TopAnime({ top, arrayName }) {
     };
     getData();
   }, []);
+  console.log(item)
   return (
     <CarouselCustom
       children={item
         .filter((item, idx) => idx < 13)
         .map((element) => (
-          <Div imgsrc={element.image_url} id={element.mal_id} />
+          <Div imgsrc={element.image_url} id={element.mal_id} title={element.title}/>
         ))}
     />
   );

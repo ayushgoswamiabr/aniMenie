@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./styles.css";
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   divRoot: {
@@ -15,18 +16,24 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 112,
       maxHeight: 170,
     },
-    width: 200,
-    height: 250,
+    width: 180,
+    height: 220,
     // width: "92%",
     borderRadius: 7,
-    marginBottom: 50,
+    marginBottom: 20,
+  },
+  link:{
+    textDecoration:"none",
+  },
+  title:{
+    width:'80%',
   },
 }));
 
-function Div({ imgsrc, id }) {
+function Div({ imgsrc, id,title }) {
   const classes = useStyles();
   return (
-    <NavLink to={{ pathname: "/custom", state: { id: id } }}>
+    <NavLink to={{ pathname: "/custom", state: { id: id } }} className={classes.link}>
       <div
         className={classes.divRoot}
         style={{
@@ -36,6 +43,7 @@ function Div({ imgsrc, id }) {
           backgroundRepeat: "no-repeat",
         }}
       />
+      <Typography color="textPrimary" className={classes.title}>{`${title}`}</Typography>
     </NavLink>
   );
 }
